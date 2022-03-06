@@ -1,0 +1,34 @@
+---
+title: "Proposal"
+description: |
+  This is our idea for the project.
+author:
+  - name: Sean, Zoe, Jiahui 
+    url: https://example.com/norajones
+    affiliation: Singapore Management University
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+
+
+```{r, eval=TRUE,echo=TRUE}
+library(tidyverse)
+data <- read.csv("Dataset/Dataset/dft-road-casualty-statistics-accident-2016.csv")
+str(data)
+
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web. 
+
+Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+
+
+
+
+
