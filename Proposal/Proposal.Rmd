@@ -16,10 +16,6 @@ output:
     toc_depth: 2
 ---
 
-```{r, eval=TRUE,echo=FALSE}
-setwd("C:/Users/Sean Prajs/Desktop/Visual Analytics/Group Project/Group 2 VA Project/Proposal")
-```
-
 # Background
 
 Car accident occurs when a vehicle collides with another vehicle, pedestrian, animal, road debris, or other stationary obstruction, such as a tree, pole or building. These collisions often result in physical injury, disability or even death as well as property damage. 
