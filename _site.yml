@@ -1,0 +1,15 @@
+name: "Group 2 VA Project"
+title: "Group 2 VA Project"
+description: |
+  Group 2 VA Project
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+  left:
+    - text: "Proposal"
+      href: "PROPOSAL"
+output: distill::distill_article
