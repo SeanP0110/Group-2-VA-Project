@@ -56,7 +56,11 @@ From the below correlation plot on chi-square residuals, we can see there is an 
 ![](data/EDA1.png){height=120%, width=100%}
 
 ## `GeoVisual Analysis`
-The GeoVisual analysis allows users to visualize the difference in number of car accidents among different boroughs across the Greater London county from a geographical perspective through selecting the 'classification method' and 'number of classes', 'year of accidents' as well as the 'accident severity' of their interest. From the choropleth map, it could be observed that overall, less severe accidents (slight and serious) are of higher occurrences compared to fatal accidents. If we dive deep into the specific boroughs, less severe collisions are more frequent in developed boroughs such as London and Westminster with larger vehicle population and heavy traffic. However, fatal accidents tend to occur more often in the less developed boroughs close to the county boundaries, possibly due to the inadequate transportation infrastructure. Moreover, there is a noticeable decrease in the number of car accidents in 2020. This may be because of lock-down policies implemented during the pandemic period, which resulted in reduced mobility generally.
+The GeoVisual analysis allows users to visualize the difference in number of car accidents among different boroughs across the Greater London county from a geographical perspective through selecting the 'classification method' and 'number of classes', 'year of accidents' as well as the 'accident severity' of their interest. From the choropleth map, it could be observed that overall, less severe accidents (slight and serious) are of higher occurrences compared to fatal accidents.
+
+If we dive deep into the specific boroughs, less severe collisions are more frequent in developed boroughs such as London and Westminster with larger vehicle population and heavy traffic. However, fatal accidents tend to occur more often in the less developed boroughs close to the county boundaries, possibly due to the inadequate transportation infrastructure.
+
+Moreover, there is a noticeable decrease in the number of car accidents in 2020. This may be because of lock-down policies implemented during the pandemic period, which resulted in reduced mobility generally.
 
 ![](data/Map1.png){height=120%, width=90%}
 
@@ -76,7 +80,9 @@ For the second regression we choose accident severity as the target variable and
 
 ## `Time-series Analysis`
 
-For the time-series analysis, the most significant result can be seen when looking at the trend of number of accidents over time in the Greater London area. From 2017 through 2019 we seen a steady, yet fluctuating, decline in the average number of accidents. In early 2020 there is a sharp drop in March and April before the average accident number returns to 2019 levels by the end of 2020. This drop is best explained by the start of the Covid-19 pandemic and the ensuing lockdown imposed on this geography. With easing restrictions traffic increased again and thus traffic accidents returned to their "normal" rate again.
+For the time-series analysis, the most significant result can be seen when looking at the trend of number of accidents over time in the Greater London area. From 2017 through 2019 we seen a steady, yet fluctuating, decline in the average number of accidents.
+
+In early 2020 there is a sharp drop in March and April before the average accident number returns to 2019 levels by the end of 2020. This drop is best explained by the start of the Covid-19 pandemic and the ensuing lockdown imposed on this geography. With easing restrictions traffic increased again and thus traffic accidents returned to their "normal" rate again.
 
 
 
@@ -86,4 +92,6 @@ For the time-series analysis, the most significant result can be seen when looki
 
 # Future Improvements
 
-In future, we can expand the scope of our study beyond the Greater London area to include the entire UK. With a larger dataset and expanded scope, the comprehensiveness of our study can be enhanced, and our analysis tools will be more effective in terms of both descriptive and predictive values. Also, other related datasets can also be brought in to enhance the amount of insights offered by the application. For instance, it is feasible to look at the human aspect of accidents, such as the age or alcohol intoxication level of drivers.
+In future, we can expand the scope of our study beyond the Greater London area to include the entire UK. With a larger dataset and expanded scope, the comprehensiveness of our study can be enhanced, and our analysis tools will be more effective in terms of both descriptive and predictive values.
+
+Also, other related datasets can also be brought in to enhance the amount of insights offered by the application. For instance, it is feasible to look at the human aspect of accidents, such as the age or alcohol intoxication level of drivers.
