@@ -12,4 +12,10 @@ navbar:
   left:
     - text: "Proposal"
       href: "Proposal/Proposal.html"
+    - text: "User Guide"
+      href: "User Guide/User Guide/user_guide.html"
+    - text: "Poster"
+      href: "poster_gp2/poster_gp2/poster-1.html"
+    - text: "Shiny App"
+      href: "Shiny App/Shiny_App.html"
 output: distill::distill_article

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>poster-1.knit</title>
+
+<script src="poster-1_files/header-attrs-2.11/header-attrs.js"></script>
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 594mm 841mm;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 594mm;
+height: 841mm;
+text-align: justify;
+font-size: 20pt;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #00808024;
+color: #0b4545;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #00808020;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 594mm;
+height: calc(841mm *  (1 - 0.1 - 0 - 0.01) );
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: #ffffff;
+font-family: Rasa;
+margin-top: calc(841mm *  0.1 );
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: #008080;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #008080;
+}
+#title {
+font-size: 125pt;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color: #0b4545;
+margin: 0;
+line-height: 85%;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 0.1em;
+color: ;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #cc0000;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #008080;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      #ffffff 1%,
+      #ffffff 20%,
+      #0b454575 33%,
+      #0b4545 50%,
+      #0b454575 66%,
+      #ffffff 80%,
+      #ffffff 99%
+    )
+    left
+    bottom
+    #ffffff
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: #000000;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: 594mm;
+height: calc(841mm * 0.1);
+position: absolute;
+background-color: #0b4545;
+color: #ffffff90;
+font-family: Special Elite;
+background-image: linear-gradient(#0b4545 50%,#008080);
+}
+.main strong {
+color: #ffffff;
+}
+.main strong > sup {
+color: #ffffff;
+}
+.main sup {
+color: #ffffff90;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc(594mm * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: 30;
+font-family: Special Elite;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 594mm;
+height: 841mm;
+padding: 0cm;
+}
+.main_bottom {
+width: 594mm;
+height: calc(841mm * 0);
+margin-top: calc(841mm * (1 - 0));
+position: absolute;
+background-color: #0b4545;
+background-image: linear-gradient(#008080 10%, #0b4545);
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #008080;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+
+
+
+</div>
+
+<div id="background" class="section level1">
+<h1>Background</h1>
+<p>Car accident occurs when a vehicle collides with another vehicle, pedestrian, animal, road debris, or other stationary obstruction, such as a tree, pole or building. These collisions often result in physical injury, disability or even death as well as property damage.</p>
+<p>According to World Health Organization (WHO), nearly 1.25 million people die in road crashes each year, on average 3,287 deaths a day. In addition, road traffic crashes rank as the 9th leading cause of death and account for 2.2% of all deaths globally. Hence, road safety has became a pressing concern for many countries as severe losses to both the society and the individuals involved are incurred when these tragedies happen. These losses arise from the cost of treatment as well as lost productivity for those killed or disabled by their injuries.</p>
+<p>In the UK, the number of road deaths plateaued from 2012 to 2019 at around 1,850 deaths a year, which is equivalent to an average of five per day. In fact, the UK government has a long-standing collection of national accident statistics coupled with in-depth accident data, known as the Road Accident In-Depth Study(RAIDS). These records have been very influential in policy-making and formulation of regulations.</p>
+</div>
+<div id="introduction-and-motivation" class="section level1">
+<h1>Introduction and Motivation</h1>
+<p>For this project, we would be using road accidents and safety statistics provided by the UK Department for Transport from 2017 to 2020 to gain a better understanding of the car accident issue in the Greater London area. The dataset consists of detailed road safety statistics about the circumstances of road accidents, including variables like the location of the accidents, road types as well as weather conditions etc. By utilizing various visualization analytics tools, we expect to shine light on the occurrences of road traffic accident (e.g. nature, causes, frequency) to develop insights and prevention mechanisms for traffic accidents and road safety in the UK.</p>
+</div>
+<div id="approach" class="section level1">
+<h1>Approach</h1>
+<p>The traffic accident dataset will be hosted on a R shiny dashboard, and users will be able to perform 4 types of analysis on it.</p>
+<ul>
+<li>Exploratory Data Analysis (EDA)</li>
+<li>Geovisual Analysis</li>
+<li>Regression Analysis</li>
+<li>Time-series Analysis</li>
+</ul>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<div id="exploratory-data-analysis-eda" class="section level2">
+<h2><code>Exploratory Data Analysis (EDA)</code></h2>
+<p>The exploratory data analysis allows users to discover the relationship between the chosen environment conditions and accident conditions.</p>
+<p>The chi-square test results will tell users whether there is a significant association between the chosen environment factor and the accident factor. For example, if we choose day of week as the environment condition and accident severity as accident severity, the chi-square test will return a p-value of 0.252, indicating no significant association between these two factor. Or in other words, there is no significant link between accident severity and on which day during the week does the accident occur.</p>
+<p>However, if we choose day of week and number of casualties, the corresponding p-value of the chi-square test is &lt;2.2E-16, indicating a significant association between these two factors. In other words, the day of the week does affect the number of casualties should an accident occur.</p>
+<p>From the below correlation plot on chi-square residuals, we can see there is an attraction or positive association between higher number of casualties (&gt;=2) and weekends (Saturday and Sunday), while generally there is a repulsion or negative association between higher number of casualties and weekdays (Monday to Friday).</p>
+<p><img src="data/EDA1.png" style="width:100.0%" /></p>
+</div>
+<div id="geovisual-analysis" class="section level2">
+<h2><code>GeoVisual Analysis</code></h2>
+<p>The GeoVisual analysis allows users to visualize the difference in number of car accidents among different boroughs across the Greater London county from a geographical perspective through selecting the ‘classification method’ and ‘number of classes’, ‘year of accidents’ as well as the ‘accident severity’ of their interest. From the choropleth map, it could be observed that overall, less severe accidents (slight and serious) are of higher occurrences compared to fatal accidents. If we dive deep into the specific boroughs, less severe collisions are more frequent in developed boroughs such as London and Westminster with larger vehicle population and heavy traffic. However, fatal accidents tend to occur more often in the less developed boroughs close to the county boundaries, possibly due to the inadequate transportation infrastructure. Moreover, there is a noticeable decrease in the number of car accidents in 2020. This may be because of lock-down policies implemented during the pandemic period, which resulted in reduced mobility generally.</p>
+<p><img src="data/Map1.png" style="width:90.0%" /></p>
+</div>
+<div id="regression-analysis" class="section level2">
+<h2><code>Regression Analysis</code></h2>
+<p>The regression analysis allows the user to explore correlation links between the two possible target variables and the independent variables.</p>
+<p>Given the flexibility of the selection and number of independent variables, there are a lot of potential results to discuss here. Therefore, in the interest of space only two regressions will be discussed.</p>
+<p>The first regression will be number of casualties as the target variable and the number of vehicles involved in the accident as the explanatory variable. Although only 3% of the variation is explained by the model, there is a valid positive correlation between the two variables with an average increase of 0.15 casualties with each extra vehicle.</p>
+<p><img src="data/Reg1.png" style="width:100.0%" /></p>
+<p>For the second regression we choose accident severity as the target variable and speed limit and day of week as explanatory variables. As can be seen below the p-values of all of these factors are too high to be significant. Therefore there is no measurable effect of either speedlimits or days of week on the severity of traffic accidents. This regression was chosen to showcase that factors that might seem correlated often are not.</p>
+<p><img src="data/Reg2.png" style="width:100.0%" /></p>
+</div>
+<div id="time-series-analysis" class="section level2">
+<h2><code>Time-series Analysis</code></h2>
+<p>For the time-series analysis, the most significant result can be seen when looking at the trend of number of accidents over time in the Greater London area. From 2017 through 2019 we seen a steady, yet fluctuating, decline in the average number of accidents. In early 2020 there is a sharp drop in March and April before the average accident number returns to 2019 levels by the end of 2020. This drop is best explained by the start of the Covid-19 pandemic and the ensuing lockdown imposed on this geography. With easing restrictions traffic increased again and thus traffic accidents returned to their “normal” rate again.</p>
+<p><img src="data/ts.png" style="width:100.0%" /></p>
+</div>
+</div>
+<div id="future-improvements" class="section level1">
+<h1>Future Improvements</h1>
+<p>In future, we can expand the scope of our study beyond the Greater London area to include the entire UK. With a larger dataset and expanded scope, the comprehensiveness of our study can be enhanced, and our analysis tools will be more effective in terms of both descriptive and predictive values. Also, other related datasets can also be brought in to enhance the amount of insights offered by the application. For instance, it is feasible to look at the human aspect of accidents, such as the age or alcohol intoxication level of drivers.</p>
+</div>
+
+</div>
+<div class="main">
+<p>Greater London Traffic Accident Analysis<br><br> Fei Jiahui Zhang Yi Sean Prajs<br><br> Master of IT in Business, Singapore Management University</p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=>
+<img id="main-img-center" src=>
+<img id="main-img-right" src=>
+</div>
+</div>
+
+
+
+</body>
+</html>
